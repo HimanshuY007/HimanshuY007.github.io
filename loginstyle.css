@@ -1,0 +1,343 @@
+body {
+  box-sizing: border-box;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position-y: -800px;
+  font-family: "Syne", sans-serif;
+}
+/*----------------------------------------------Menu Icon--------------------------------------*/
+.menuicon {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0px 0px 0px 10px;
+  transition: all 0.6s;
+}
+.bar1,
+.bar2,
+.bar3 {
+  height: 4px;
+  width: 35px;
+  background: white;
+  margin: 8px 0px;
+  transition: all 0.6s;
+}
+.change {
+  transform: translateX(10vw);
+}
+
+.change .bar1 {
+  transform: rotate(45deg) translate(9px, 7.5px);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  transform: rotate(-45deg) translate(9px, -7.5px);
+}
+/*-----------------------------------------------off canvas menu------------------------------*/
+.menu {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: rgb(92, 92, 92);
+  transform: translateX(-100%);
+  transition: all 0.6s;
+}
+ul.list {
+  height: 25%;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.list li {
+  list-style-type: none;
+  flex-grow: 1;
+  text-align: center;
+  border-bottom: 1px solid white;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.list li:hover {
+  background: rgb(70, 70, 70);
+}
+.list li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  margin-top: 15%;
+}
+
+/*----------------------------------------------Welcome format---------------------------------*/
+.intro {
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.welcome {
+  color: white;
+  font-size: 50px;
+  z-index: -1;
+}
+.ask span {
+  display: inline-block;
+  width: 100px;
+  padding: 0px 45px;
+  color: white;
+}
+/*--------------------------------------------------Login Format----------------------------------------*/
+#loginpage {
+  width: 30%;
+  background-color: white;
+  z-index: 1;
+  display: none;
+  margin: auto;
+  margin-top: 90px;
+  overflow: auto;
+  animation: animate 0.6s;
+  border-radius: 5px;
+}
+
+.container input[type="text"],
+.container input[type="password"] {
+  width: 97%;
+  padding: 10px 15px;
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 10px 5px;
+}
+
+.loginbut {
+  width: 96%;
+  background-color: #6c63ff;
+  box-sizing: border-box;
+  padding: 15px 10px;
+  margin: 10px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 20px;
+}
+.loginbut:focus,
+.cancel:focus {
+  outline: 0px;
+}
+.container label {
+  font-weight: bold;
+  font-size: 17px;
+  margin: 0px 10px;
+}
+
+.container2 {
+  background-color: rgb(202, 202, 202);
+  margin: 10px 5px;
+  padding: 5px 10px;
+}
+.cancel {
+  background-color: #d63031;
+  padding: 10px;
+  margin: 10px 5px;
+}
+.fpsw {
+  float: right;
+  padding-top: 20px;
+}
+
+.imagecontainer {
+  position: relative;
+  text-align: center;
+  margin: 20px 5px;
+}
+.logpic {
+  width: 30%;
+}
+.close {
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+  top: 0px;
+  right: 20px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+@keyframes animate {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/*------------------------------------------Styling buttons--------------------------------------------------*/
+.butcontainer {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 52%;
+  left: 0px;
+  justify-content: center;
+  z-index: -1;
+}
+.butcontainer button {
+  display: inline-block;
+  margin: 10px 40px;
+  padding: 5px 15px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+.butcontainer button:focus {
+  outline: 0;
+}
+.butcontainer button span {
+  display: inline-block;
+  position: relative;
+}
+.butcontainer button span::after {
+  position: absolute;
+  content: " \00BB";
+  top: 0px;
+  right: -20px;
+  opacity: 0;
+  transition: all 0.6s;
+}
+.butcontainer button:hover span {
+  padding-right: 20px;
+}
+.butcontainer button:hover span::after {
+  opacity: 1;
+  right: 0px;
+}
+.butcontainer button:hover {
+  margin: 9px 29px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+/*-----------------------------------------------Signup form---------------------------------------*/
+#signupcontainer {
+  background-color: white;
+  display: flex;
+  width: 70%;
+  height: 500px;
+  margin: auto;
+  margin-top: 6%;
+  display: none;
+  animation: animate 0.6s;
+}
+
+/*------------------------------------------------slideshow----------------------------------------*/
+div.slideshow {
+  flex: 2;
+  text-align: center;
+  position: relative;
+}
+div.myslides {
+  display: none;
+}
+.numbertext {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+}
+.text {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+img.undraw {
+  width: 60%;
+  margin-top: 100px;
+}
+.next,
+.prev {
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: all 0.6s;
+  user-select: none;
+}
+.prev {
+  left: 5px;
+}
+.next {
+  right: 5px;
+}
+.prev:hover,
+.next:hover {
+  border: 1px solid #6c63ff;
+}
+
+/*----------------------------------------------form-----------------------------------------------*/
+div.signupform {
+  background-color: #6c63ff;
+  color: white;
+  flex: 1;
+  position: relative;
+}
+span.cross {
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  padding: 5px 20px;
+}
+.formcontainer1 {
+  text-align: center;
+}
+.formcontainer2 {
+  margin: 0px 10px;
+}
+.formcontainer2 label {
+  display: block;
+  margin: 5px 0px;
+}
+.formcontainer2 input {
+  width: 90%;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.formcontainer3 {
+  margin-top: 30px;
+  text-align: center;
+}
+.formcontainer3 button {
+  font-size: 15px;
+  display: inline-block;
+  padding: 5px 15px;
+  margin: 0px 15px;
+  border-radius: 5px;
+  outline: none;
+}
+.formcontainer3 button.signupcancel {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+.formcontainer3 button.signupbut {
+  background-color: white;
+  color: #6c63ff;
+  border: 1px solid #6c63ff;
+}

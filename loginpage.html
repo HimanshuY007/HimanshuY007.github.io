@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="loginstyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!---------------------------------------Menu Icon----------------------------------------------------------->
+    <div class="menuicon" id="hamburger" onclick="sideNav(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <!---------------------------------------Off canvas menu----------------------------------------------------->
+    <div class="menu" id="sidebar">
+      <ul class="list">
+        <li><a href="#" class="about">About</a></li>
+        <li><a href="#" class="contacts">Contacts</a></li>
+        <li><a href="#" class="Support">Support</a></li>
+      </ul>
+    </div>
+    <!------------------------------------------Introduction----------------------------------------------------->
+    <div class="intro">
+      <h1 class="welcome">Welcome!</h1>
+      <div class="ask">
+        <span class="ask1">Do you already have an account?</span>
+        <span class="ask2">Are you new to this Website?</span>
+      </div>
+    </div>
+    <!----------------------------------------------Buttons------------------------------------------------------->
+    <div class="butcontainer">
+      <button
+        class="login"
+        onclick="document.getElementById('loginpage').style.display= 'block'"
+      >
+        <span> Login </span>
+      </button>
+      <button
+        class="signup"
+        onclick="document.getElementById('signupcontainer').style.display='flex'"
+      >
+        <span> Sign Up </span>
+      </button>
+    </div>
+    <!---------------------------------------------LOGIN format--------------------------------------------------->
+
+    <div id="loginpage">
+      <form action="">
+        <div class="imagecontainer">
+          <span class="close" onclick="nodisplay()">&times;</span>
+          <img class="logpic" src="avatar.svg" alt="Profile Pic" />
+        </div>
+        <div class="container">
+          <label for="uname">Username</label>
+          <input type="text" name="uname" placeholder="Enter your Name" />
+          <label for="psw">Password</label>
+          <input type="password" name="psw" placeholder="Enter password" />
+          <button class="loginbut" type="button">Login</button>
+          <input type="checkbox" checked="checked" name="remember" />
+          <label for="remember">Remember Me</label>
+        </div>
+        <div class="container2">
+          <button class="cancel" type="button" onclick="nodisplay()">
+            Cancel
+          </button>
+          <span class="fpsw">Forgot <a href="">Password?</a></span>
+        </div>
+      </form>
+    </div>
+    <!-----------------------------------------------Sign up Formate------------------------------------------------>
+    <div id="signupcontainer">
+      <!------------------Slideshow----------------->
+      <div class="slideshow">
+        <div class="myslides">
+          <div class="numbertext">1 out of 4</div>
+          <img class="undraw" src="image1.svg" alt="Manage Documents" />
+          <div class="text">Manage all your documents online</div>
+        </div>
+
+        <div class="myslides">
+          <div class="numbertext">2 out of 4</div>
+          <img class="undraw" src="image2.svg" alt="Multiple devices" />
+          <div class="text">Work on Multiple devices</div>
+        </div>
+
+        <div class="myslides">
+          <div class="numbertext">3 out of 4</div>
+          <img class="undraw" src="image3.svg" alt="Work with team" />
+          <div class="text">Work together</div>
+        </div>
+
+        <div class="myslides">
+          <div class="numbertext">4 out of 4</div>
+          <img class="undraw" src="image4.svg" alt="Share" />
+          <div class="text">Share your documents with anyone you want</div>
+        </div>
+        <!--------previous and next buttons-->
+        <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlide(1)">&#10095;</a>
+      </div>
+      <!-----------------Form----------------------->
+      <div class="signupform">
+        <span class="cross" onclick="removeSignup()">&times;</span>
+        <form action="">
+          <div class="formcontainer1">
+            <h1>Sign Up</h1>
+            <p>Please fill the form to create and account</p>
+          </div>
+          <div class="formcontainer2">
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Enter Username" />
+            <label for="email">Email-Id:</label>
+            <input type="email" name="email" placeholder="Enter Email" />
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+            />
+            <label for="confpassword">Confirm password:</label>
+            <input
+              type="password"
+              name="confpassword"
+              placeholder="Confirm Password"
+            />
+            <p>
+              By creating an account you agree to our
+              <a href="#">Terms & Privacy.</a>
+            </p>
+          </div>
+          <div class="formcontainer3">
+            <button class="signupcancel" type="button" onclick="removeSignup()">
+              Cancel
+            </button>
+            <button class="signupbut" type="button">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="mypage.js"></script>
+  </body>
+</html>
